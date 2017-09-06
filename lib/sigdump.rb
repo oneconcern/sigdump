@@ -77,7 +77,10 @@ module Sigdump
         cmap[c] = (cmap[c] || 0) + 1
         if c == String
           string_size += o.bytesize
-          io.write "Allocated String: " + o + "\n"
+          begin
+            io.write "Allocated String: " + _fn(o.to_s) + "\n"
+          rescue
+          end
         elsif c == Array
           array_size = o.size
         elsif c == Hash
