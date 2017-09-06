@@ -80,6 +80,7 @@ module Sigdump
           begin
             io.write "Allocated-String: " + _fn(o.to_s) + "\n"
           rescue
+          rescue Exception
           end
         elsif c == Array
           array_size = o.size
