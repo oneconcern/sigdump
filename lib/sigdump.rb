@@ -78,7 +78,7 @@ module Sigdump
         if c == String
           string_size += o.bytesize
           begin
-            io.write "Allocated String: " + _fn(o.to_s) + "\n"
+            io.write "Allocated-String: " + _fn(o.to_s) + "\n"
           rescue
           end
         elsif c == Array
